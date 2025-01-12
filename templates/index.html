@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+<link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+
+<title>Game Hunter</title>
+<style>
+    *{
+        font-family: "Poppins", serif;
+    }
+    
+    .card-save{
+        top:100%;
+        z-index:999;
+        transition: transform 0.3s ease;
+    }
+    .card-scraped:hover .card-save{
+        top:50%;
+        transition: transform 0.3s ease;
+        
+    }
+    .card-scraped:hover .card-img-overlay{
+       background-color: rgba(0,0,0, 0.4);
+       transition: transform 0.3s ease;
+    }
+    
+    .card{
+        border-radius: .8rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+        transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave */
+
+    }
+    .card img{
+        transition: .5s ease all;
+    }
+    
+    .card:hover{
+        box-shadow: 0 0 50px 10px rgba(13, 110, 253, 0.4); /* Sombra difusa com desfoque alto */
+        transform: scale(1.05); /* Pequeno zoom para dar mais impacto */
+    }
+    .card:hover img{
+        transform: scale(1.1);
+        transition: .5s ease all;
+    }
+</style>
+</head>
+<body class="bg-dark">
+<div id="app"><router-view></router-view></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.6.5/dist/vue-router.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js" ></script>
+<script src="https://unpkg.com/vue-select@latest"></script>
+
+<!-- UTILS -->
+<script src="{{ url_for('static', filename = 'App/src/views/Game/platforms.js') }}"></script>
+<!-- END UTILS -->
+
+<!-- VIEWS -->
+<script src="{{ url_for('static', filename = 'App/src/views/Home/index.js') }}"></script>
+<script src="{{ url_for('static', filename = 'App/src/views/Game/index.js') }}"></script>
+<!-- END VIEWS -->
+
+<script src="{{ url_for('static', filename = 'App/src/routes/index.js') }}"></script>
+
+<script>
+    const BASE_URL = "http://localhost:5002"
+    const app = new Vue({
+        el:"#app",
+        delimiters:["[[","]]"],
+        router: router,
+        data(){
+            return{
+                path:""
+            }
+        },
+        methods:{
+
+        }
+    })
+    Vue.component('v-select', VueSelect.VueSelect);
+</script>
+</body>
+</html>
