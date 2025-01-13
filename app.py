@@ -57,7 +57,7 @@ def upload_image():
     filename = f"{game_name}-image.png"
     filepath = BASE_DIR_IMAGES+filename
     file.save(filepath)
-    convert_to_jpg(BASE_DIR_IMAGES, filepath, filename)
+    convert_to_png(BASE_DIR_IMAGES, filepath, filename)
     new_image = update_image_xml(int(game_index), filepath, BASE_DIR_XML, BASE_DIR)
     return jsonify({'status':'ok','image':new_image})
 
@@ -76,7 +76,7 @@ def upload_clearlogo():
     filename = f"{game_name}-marquee.png"
     filepath = BASE_DIR_IMAGES+filename
     file.save(filepath)
-    convert_to_jpg(BASE_DIR_IMAGES, filepath, filename)
+    convert_to_png(BASE_DIR_IMAGES, filepath, filename)
     new_image = update_marquee_xml(int(game_index), filepath, BASE_DIR_XML, BASE_DIR)
     return jsonify({'status':'ok','image':new_image})
 
@@ -90,7 +90,7 @@ def upload_image_scrape():
     filename = f"{game_name}-image.png"
     filepath = BASE_DIR_IMAGES+filename
     save_scraped_image(data.get('image'),filepath )
-    convert_to_jpg(BASE_DIR_IMAGES, filepath, filename)
+    convert_to_png(BASE_DIR_IMAGES, filepath, filename)
     new_image = update_image_xml(int(game_index), filepath, BASE_DIR_XML, BASE_DIR)
     return jsonify({'status':'ok','image':new_image})
 
@@ -105,7 +105,7 @@ def upload_clearlogo_scrape():
     filename = f"{game_name}-marquee.png"
     filepath = BASE_DIR_IMAGES+filename
     save_scraped_image(data.get('image'),filepath )
-    convert_to_jpg(BASE_DIR_IMAGES, filepath, filename)
+    convert_to_png(BASE_DIR_IMAGES, filepath, filename)
     new_image = update_marquee_xml(int(game_index), filepath, BASE_DIR_XML, BASE_DIR)
     # return jsonify({})
     return jsonify({'status':'ok','image':new_image})
