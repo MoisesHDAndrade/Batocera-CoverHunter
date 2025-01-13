@@ -44,3 +44,7 @@ ehthumbs.db
 *.bak
 *.swp 
 *.swo
+*.png
+*.jpeg
+*.jpg
+*.svg
