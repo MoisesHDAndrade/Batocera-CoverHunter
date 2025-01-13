@@ -132,7 +132,7 @@ const Game = Vue.component('Game',{
                                                     </div>
                                                     <div class="row mx-0 w-100" >
                                                         <div class="col text-center">
-                                                            <button class="btn btn-primary" @click="savePickedImage">
+                                                            <button class="btn btn-primary" @click="savePickedImage" data-bs-dismiss="modal">
                                                                 Save
                                                             </button>
                                                         </div>
@@ -155,7 +155,7 @@ const Game = Vue.component('Game',{
                                             <div class="row w-100 mx-0 mt-3">
                                                 <div class="col">
                                                     <label class="text-light">Game Name</label>
-                                                    <input class="form-control" disabled :value="game.name">
+                                                    <input class="form-control" v-model="game.name" :value="game.name">
                                                 </div>
                                             </div>
                                             <div class="row w-100 mx-0 mt-3">
@@ -206,7 +206,7 @@ const Game = Vue.component('Game',{
                                                         <div class="card-img-overlay mx-0 px-0">
                                                             <div class="position-absolute d-flex justify-content-center h-100 w-100 card-save" style="">
                                                                 <div>
-                                                                    <button class="btn btn-primary text-center" @click="saveScrapedImage(image)">Save Image</button>
+                                                                    <button class="btn btn-primary text-center" @click="saveScrapedImage(image)" data-bs-dismiss="modal">Save Image</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -237,10 +237,7 @@ const Game = Vue.component('Game',{
                                 
                             </div>
                         </div>
-                        <div class="modal-footer border-0">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
