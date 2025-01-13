@@ -155,7 +155,7 @@ const Game = Vue.component('Game',{
                                             <div class="row w-100 mx-0 mt-3">
                                                 <div class="col">
                                                     <label class="text-light">Game Name</label>
-                                                    <input class="form-control" v-model="game.name" :value="game.name">
+                                                    <input class="form-control" v-model="game.name" >
                                                 </div>
                                             </div>
                                             <div class="row w-100 mx-0 mt-3">
