@@ -61,6 +61,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Developed with ❤️ for gamers who want complete control over their game library aesthetics.
 
 
-
-Developed with ❤️ for gamers who want complete control over their game library aesthetics.
-
